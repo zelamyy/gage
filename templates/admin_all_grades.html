@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>📊 All Student Grades</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      margin-top: 40px;
+    }
+
+    table {
+      background-color: #fff;
+    }
+
+    th {
+      background-color: #343a40;
+      color: white;
+    }
+
+    .btn-back {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2 class="text-center mb-4">📊 All Student Grades</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Email</th>
+        <th>Course</th>
+        <th>Mid</th>
+        <th>Final</th>
+        <th>Assignment</th>
+        <th>Quiz</th>
+        <th>Total</th>
+        <th>Letter</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for g in grades %}
+        <tr>
+          <td>{{ g.student_name }}</td>
+          <td>{{ g.email }}</td>
+          <td>{{ g.course_name }}</td>
+          <td>{{ g.mid_exam }}</td>
+          <td>{{ g.final_exam }}</td>
+          <td>{{ g.assignment }}</td>
+          <td>{{ g.quiz }}</td>
+          <td>{{ g.grade }}</td>
+          <td>{{ g.letter }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <a href="/admin" class="btn btn-secondary btn-back">← Back to Dashboard</a>
+</div>
+
+</body>
+</html>
